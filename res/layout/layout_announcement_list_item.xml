@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/listViewAnnouncementListItem" >
+
+    <TextView
+        android:id="@+id/textViewAnnouncementTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/textViewAnnouncementNEW"
+        android:singleLine="true"
+        android:text="這只是一個公告"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textViewAnnouncementDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textViewAnnouncementTitle"
+        android:layout_alignParentRight="true"
+        android:text="2000-00-00" />
+
+    <TextView
+        android:id="@+id/textViewAnnouncementNEW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewAnnouncementDate"
+        android:layout_alignBottom="@+id/textViewAnnouncementDate"
+        android:layout_toLeftOf="@+id/textViewAnnouncementDate"
+        android:text=""
+        android:textColor="@color/red" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textViewAnnouncementTitle"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</RelativeLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/DisPlayTotal" >
+
+    <TextView
+        android:id="@+id/DisplayTotalRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="1/100"
+        android:textSize="35sp" />
+
+    <TextView
+        android:id="@+id/DisplayTotalGrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/DisplayTotalRating"
+        android:text="100"
+        android:textSize="35sp" />
+
+    <TextView
+        android:id="@+id/TotalRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/total_rating"
+        android:textSize="35sp" />
+
+    <TextView
+        android:id="@+id/TotalGrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/TotalRating"
+        android:text="@string/total_grade"
+        android:textSize="35sp" />
+
+</RelativeLayout>
