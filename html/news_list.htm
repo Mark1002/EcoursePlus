@@ -1,0 +1,338 @@
+<html>
+<head>
+<title>最新消息</title>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<link rel="stylesheet" href="/images/skin1/css/main-body.css" type="text/css">
+</head>
+<body background=/images/skin1/bbg.gif onLoad="parent.options.cwin();">
+<a name="newst"></a>
+<script language="JavaScript">
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+
+function Vlimit()
+{
+	parent.options.msgwin('資料處理中, 請稍候..');
+	document.vlimit.submit()
+}
+
+function check_post() {
+	var error = true;
+	var msg = "請輸入";
+	if(post_art.subject.value == "") {
+		error = false;
+		msg = msg + " 標題";
+	}
+
+	if(post_art.news.value == "") {
+		error = false;
+		msg = msg + " 內容";
+	}
+	
+	if(!error)
+		alert(msg);
+	return error;
+}
+
+</script>
+<BR>
+<center>
+<table border="0" align="center" cellpadding="0" cellspacing="0" width="35%"><tr><td><div align="right"><img src="/images/skin1/bor/bor_01.GIF" width="12" height="11"></div></td><td><div align="center"><img src="/images/skin1/bor/bor_02.GIF" width="100%" height="11"></div></td><td><div align="left"><img src="/images/skin1/bor/bor_03.GIF" width="17" height="11"></div></td></tr><tr height=10><td><div align="right"><img src="/images/skin1/bor/bor_04.GIF" width="12" height="100%"></div></td><td bgcolor="#CCCCCC"><table border="0" width="100%" cellpadding="0" cellspacing="1"><tr bgcolor="#000066" align="center"><td><a href="../Testing_Assessment/show_allwork.php"><font size=2 color="white">未交作業</font></a></div></td><td><a href="../Testing_Assessment/show_alltest.php"><font size=2 color="white">未做測驗</font></a></td></tr><tr bgcolor="#FFFFCC" align="center"><td><font size=2 color="red">2</font></td><td><font size=2 color="red">0</font></td></tr><tr bgcolor="#FFFFCC" align="center"><td><a href="../textbook/material.php"><font size=2 color="#0066FF"><strong>學習溫度計(100%)</strong></font></a></td><td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="100%" height=7></div></td></tr></table></td><td><div align="left"><img src="/images/skin1/bor/bor_06.GIF" width="17" height="100%"></div></td></tr><tr><td><div align="right"><img src="/images/skin1/bor/bor_07.GIF" width="12" height="17"></div></td><td><div align="center"><img src="/images/skin1/bor/bor_08.GIF" width="100%" height="17"></div></td><td><div align="left"><img src="/images/skin1/bor/bor_09.GIF" width="17" height="17"></div></td></tr></table>
+<p>最新消息<p>
+<H2></H2><BR>
+<table border = 0 >
+<form name=vlimit method=POST action=./news.php>
+<tr><td>
+<select name="views" onChange="Vlimit();">
+<option value="0" selected>所有的公告</option>
+<option value="1" V1>最近一個月的公告</option>
+<option value="2" V2>至今發布的公告</option>
+
+
+</select>
+</td></tr>
+</form>
+</table>
+
+<table border="0" align="center" cellpadding="0" cellspacing="0" width="80%">
+<tr> 
+<td> 
+<div align="right"><img src="/images/skin1/bor/bor_01.GIF" width="12" height="11"></div>
+</td>
+<td> 
+<div align="center"><img src="/images/skin1/bor/bor_02.GIF" width="100%" height="11"></div>
+</td>
+<td> 
+<div align="left"><img src="/images/skin1/bor/bor_03.GIF" width="17" height="11"></div>
+</td>
+</tr>
+<tr> 
+<td height=10> 
+<div align="right"><img src="/images/skin1/bor/bor_04.GIF" width="12" height="100%"></div>
+</td>
+<td bgcolor="#CCCCCC"> 
+<table cellpadding=3 align=center border=0 bordercolorlight="#666666" bordercolordark="#FFFFFF" width="100%" cellspacing="1">
+<tr bgcolor=#000066 align=center>
+
+<TD> 
+<div align="center"><a href="./news.php?views=0&order=1"><FONT color=#ffffff size=2>日期</FONT></a></div></TD>
+<td>
+<div align="center"><a href="./news.php?views=0&order=3"><FONT color=#ffffff size=2>公告重要等級</font></a></div></td>
+<TD> 
+<div align="center"><FONT color=#ffffff size=2>標題及詳文連結</FONT></div></TD>
+<TD COLSPAN=2> 
+<div align="center"><a href="./news.php?views=0&order=7"><FONT color=#ffffff size=2>瀏覽次數</FONT></a></div></TD>
+
+</TR>
+
+<tr bgcolor="#F0FFEE">
+<td align=left><div align="center"><FONT size=2>2013-05-22</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#336633>一般等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=69&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">HW#3 is out<img src=/images/new.gif border=0></a></font></div></td>
+<td align=right><div align="center"><FONT size=2>61</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="1.84345723784%" height=7></div></td>
+
+</tr>
+
+
+<tr bgcolor="#E6FFFC">
+<td align=left><div align="center"><FONT size=2>2013-05-21</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#336633>一般等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=68&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">關於HW2文件檔</a></font></div></td>
+<td align=right><div align="center"><FONT size=2>142</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="4.2913266848%" height=7></div></td>
+
+</tr>
+
+
+<tr bgcolor="#F0FFEE">
+<td align=left><div align="center"><FONT size=2>2013-05-17</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#336633>一般等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=67&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">關於作業</a></font></div></td>
+<td align=right><div align="center"><FONT size=2>149</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="4.50287095799%" height=7></div></td>
+
+</tr>
+
+
+<tr bgcolor="#E6FFFC">
+<td align=left><div align="center"><FONT size=2>2013-05-16</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#336633>一般等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=66&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">關於文件檔</a></font></div></td>
+<td align=right><div align="center"><FONT size=2>172</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="5.19794499849%" height=7></div></td>
+
+</tr>
+
+
+<tr bgcolor="#F0FFEE">
+<td align=left><div align="center"><FONT size=2>2013-05-15</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#336633>一般等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=64&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">測試檔教學已上傳</a></font></div></td>
+<td align=right><div align="center"><FONT size=2>138</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="4.17044424297%" height=7></div></td>
+
+</tr>
+
+
+<tr bgcolor="#E6FFFC">
+<td align=left><div align="center"><FONT size=2>2013-05-15</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#336633>一般等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=65&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">HW1補交&HW2延期</a></font></div></td>
+<td align=right><div align="center"><FONT size=2>197</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="5.9534602599%" height=7></div></td>
+
+</tr>
+
+
+<tr bgcolor="#F0FFEE">
+<td align=left><div align="center"><FONT size=2>2013-05-14</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#336633>一般等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=61&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">關於HW1成績</a></font></div></td>
+<td align=right><div align="center"><FONT size=2>252</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="7.615593835%" height=7></div></td>
+
+</tr>
+
+
+<tr bgcolor="#E6FFFC">
+<td align=left><div align="center"><FONT size=2>2013-05-14</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#336633>一般等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=62&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">關於HW1成績</a></font></div></td>
+<td align=right><div align="center"><FONT size=2>155</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="4.68419462073%" height=7></div></td>
+
+</tr>
+
+
+<tr bgcolor="#F0FFEE">
+<td align=left><div align="center"><FONT size=2>2013-05-14</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#336633>一般等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=63&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">HW1成績</a></font></div></td>
+<td align=right><div align="center"><FONT size=2>104</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="3.14294348746%" height=7></div></td>
+
+</tr>
+
+
+<tr bgcolor="#E6FFFC">
+<td align=left><div align="center"><FONT size=2>2013-05-13</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#336633>一般等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=60&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">關於HW1成績</a></font></div></td>
+<td align=right><div align="center"><FONT size=2>203</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="6.13478392264%" height=7></div></td>
+
+</tr>
+
+
+<tr bgcolor="#F0FFEE">
+<td align=left><div align="center"><FONT size=2>2013-05-13</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#336633>一般等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=59&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">關於HW2</a></font></div></td>
+<td align=right><div align="center"><FONT size=2>239</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="7.22272589906%" height=7></div></td>
+
+</tr>
+
+
+<tr bgcolor="#E6FFFC">
+<td align=left><div align="center"><FONT size=2>2013-05-06</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#336633>一般等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=58&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">HW2評分標準</a></font></div></td>
+<td align=right><div align="center"><FONT size=2>137</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="4.14022363252%" height=7></div></td>
+
+</tr>
+
+
+<tr bgcolor="#F0FFEE">
+<td align=left><div align="center"><FONT size=2>2013-05-01</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#336633>一般等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=57&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">no class on 5/6 and 5/13</a></font></div></td>
+<td align=right><div align="center"><FONT size=2>83</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="2.50831066788%" height=7></div></td>
+
+</tr>
+
+
+<tr bgcolor="#E6FFFC">
+<td align=left><div align="center"><FONT size=2>2013-05-01</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#336633>一般等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=56&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">HW#2 is out</a></font></div></td>
+<td align=right><div align="center"><FONT size=2>109</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="3.29404653974%" height=7></div></td>
+
+</tr>
+
+
+<tr bgcolor="#F0FFEE">
+<td align=left><div align="center"><FONT size=2>2013-04-25</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#336633>一般等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=55&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">期中考成績公布</a></font></div></td>
+<td align=right><div align="center"><FONT size=2>70</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="2.11544273194%" height=7></div></td>
+
+</tr>
+
+
+<tr bgcolor="#E6FFFC">
+<td align=left><div align="center"><FONT size=2>2013-04-13</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#336633>一般等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=54&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">4/15期中考地點</a></font></div></td>
+<td align=right><div align="center"><FONT size=2>146</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="4.41220912662%" height=7></div></td>
+
+</tr>
+
+
+<tr bgcolor="#F0FFEE">
+<td align=left><div align="center"><FONT size=2>2013-04-10</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#336633>一般等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=53&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">4/15期中考注意事項</a></font></div></td>
+<td align=right><div align="center"><FONT size=2>190</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="5.7419159867%" height=7></div></td>
+
+</tr>
+
+
+<tr bgcolor="#E6FFFC">
+<td align=left><div align="center"><FONT size=2>2013-04-08</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#336633>一般等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=52&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">Correction: HW#1 due date</a></font></div></td>
+<td align=right><div align="center"><FONT size=2>182</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="5.50015110305%" height=7></div></td>
+
+</tr>
+
+
+<tr bgcolor="#F0FFEE">
+<td align=left><div align="center"><FONT size=2>2013-03-31</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#336633>一般等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=51&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">HW#1 note</a></font></div></td>
+<td align=right><div align="center"><FONT size=2>194</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="5.86279842853%" height=7></div></td>
+
+</tr>
+
+
+<tr bgcolor="#E6FFFC">
+<td align=left><div align="center"><FONT size=2>2013-03-25</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#336633>一般等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=49&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">HW#1 is out</a></font></div></td>
+<td align=right><div align="center"><FONT size=2>197</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="5.9534602599%" height=7></div></td>
+
+</tr>
+
+
+<tr bgcolor="#F0FFEE">
+<td align=left><div align="center"><FONT size=2>2013-03-25</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#FF0000>最高等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=50&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">midterm</a></font></div></td>
+<td align=right><div align="center"><FONT size=2>152</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="4.59353278936%" height=7></div></td>
+
+</tr>
+
+
+<tr bgcolor="#E6FFFC">
+<td align=left><div align="center"><FONT size=2>2011-03-31</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#336633>一般等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=3&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">作業一相關說明，投影片有更新</a></font></div></td>
+<td align=right><div align="center"><FONT size=2>3</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="0.090661831369%" height=7></div></td>
+
+</tr>
+
+
+<tr bgcolor="#F0FFEE">
+<td align=left><div align="center"><FONT size=2>2011-03-29</font></div></td>
+<td align=left><div align="center"><FONT size=2><font color=#336633>一般等級</font></font></div></td>
+<td align=left><div align="center"><FONT size=2><a href=# onClick="window.open('./content.php?a_id=1&system=0&PHPSESSID=b8c3970fbed7311d91dfa486511b77b7', '', 'width=500,height=400,resizable=1,scrollbars=1');">HW#1</a></font></div></td>
+<td align=right><div align="center"><FONT size=2>3</font></div></td>
+<td align=left><div align="left"><IMG SRC="/images/indicator.jpg" width="0.090661831369%" height=7></div></td>
+
+</tr>
+
+
+</table>
+</td>
+<td height=10> 
+<div align="left"><img src="/images/skin1/bor/bor_06.GIF" width="17" height="100%"></div>
+</td>
+</tr>
+<tr> 
+<td> 
+<div align="right"><img src="/images/skin1/bor/bor_07.GIF" width="12" height="17"></div>
+</td>
+<td> 
+<div align="center"><img src="/images/skin1/bor/bor_08.GIF" width="100%" height="17"></div>
+</td>
+<td> 
+<div align="left"><img src="/images/skin1/bor/bor_09.GIF" width="17" height="17"></div>
+</td>
+</tr>
+</table>
+</center></body></html>

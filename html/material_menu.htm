@@ -1,0 +1,57 @@
+<html>
+<head>
+<title> TITLE </title>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<STYLE type=text/css>
+ body { SCROLLBAR-FACE-COLOR: #4d6eb2; SCROLLBAR-ARROW-COLOR: #FFFFFF; SCROLLBAR-TRACK-COLOR: #DDDDFF; SCROLLBAR-SHADOW-COLOR: #054878; SCROLLBAR-3DLIGHT-COLOR: black; }
+</STYLE>
+<link rel="stylesheet" href="/images/skin1/css/main-body.css" type="text/css">
+</head>
+<body background="/images/img/bg.gif">
+<script language="JavaScript" src="/js/tree.js">
+</script>
+<script language="JavaScript1.2">
+initIt;
+if (NS4) {
+        firstEl = "el1Parent";
+        firstInd = getIndex(firstEl);
+        showAll();
+        arrange();
+}
+</script>
+<div id="el1Parent" class="parent">
+      <a class="item" target="html" href="course_menu.php">
+      <font color="black" class="heada"> 課程導論 </font></a>
+</div>
+
+<div id="el2Parent" class="parent" >
+      <a class='item' target='html' onClick="expandIt('el2'); return false;"><img NAME='imEx' SRC='/images/plus.gif' BORDER=0 ALT='+' width=9 height=9 ID='el2Img'></a>
+	  <a class='item' target='html' href='course_menu.php?chap=1' onClick="expandIt('el2');"><font color='black' class='heada'>Homework1</font></a>
+</div>
+<div id="el2Child" class="child" style="display:none">
+      
+	  <script language='JavaScript1.2'></script>
+
+</div>
+<div id="el3Parent" class="parent" >
+      <a class='item' target='html' onClick="expandIt('el3'); return false;"><img NAME='imEx' SRC='/images/plus.gif' BORDER=0 ALT='+' width=9 height=9 ID='el3Img'></a>
+	  <a class='item' target='html' href='course_menu.php?chap=2' onClick="expandIt('el3');"><font color='black' class='heada'>Homework2</font></a>
+</div>
+<div id="el3Child" class="child" style="display:none">
+      
+	  <script language='JavaScript1.2'></script>
+
+</div>
+<div id="el4Parent" class="parent" >
+      <a class='item' target='html' onClick="expandIt('el4'); return false;"><img NAME='imEx' SRC='/images/plus.gif' BORDER=0 ALT='+' width=9 height=9 ID='el4Img'></a>
+	  <a class='item' target='html' href='course_menu.php?chap=3' onClick="expandIt('el4');"><font color='black' class='heada'>Homework3</font></a>
+</div>
+<div id="el4Child" class="child" style="display:none">
+      
+	  <script language='JavaScript1.2'></script>
+
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EcoursePlus</string>
+    <string name="action_settings">設定</string>
+    <string name="account">帳號</string>
+    <string name="password">密碼</string>
+    <string name="login">登入</string>
+    <string name="logout">登出</string>
+    <string name="repwd">記住帳號密碼</string>
+    <string name="fragment_title_1">公告</string>
+    <string name="fragment_title_2">課程教材</string>
+    <string name="fragment_title_3">成績查詢</string>
+    <string name="total_rating">總排名</string>
+    <string name="total_grade">總成績</string>
+    <string name="version">1.0.1</string>
+
+</resources>
