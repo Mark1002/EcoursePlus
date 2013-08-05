@@ -24,7 +24,7 @@ public class HtmlGetter
 		Thread thread = new Thread(post);
 		thread.start();
 		    
-		// µ¥«İµn¤J§¹¦¨
+		// ç­‰å¾…ç™»å…¥å®Œæˆ
 		while( !post.isDone() ) {
 			try {
 				Thread.sleep(30);
@@ -45,7 +45,7 @@ public class HtmlGetter
 		    Thread thread2 = new Thread(get);
 		    thread2.start();
 		        
-		    // µ¥«İ¨ú±o­×½Ò²M³æ
+		    // ç­‰å¾…å–å¾—ä¿®èª²æ¸…å–®
 		    while( !get.isDone() ){
 		        try {
 		        	Thread.sleep(30);

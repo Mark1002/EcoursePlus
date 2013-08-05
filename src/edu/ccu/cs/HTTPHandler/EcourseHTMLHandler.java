@@ -1,7 +1,7 @@
 /***
  * 	Name : EcourseHTMLHandler.java
  *  Date : 2013/5/30
- *  Descirption : HTTP and Parserªºµ²¦X
+ *  Descirption : HTTP and Parserçš„çµåˆ
  * */
 
 package edu.ccu.cs.HTTPHandler;

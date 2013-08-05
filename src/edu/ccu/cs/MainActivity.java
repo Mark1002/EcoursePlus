@@ -1,6 +1,6 @@
 /**
  *	MainActivity
- *	Â²¤¶¡G¦¹Activity¥Î¨Ó±±¨îÅª¨ú¤£¦P½Òµ{¶¡ªº¸ê°T
+ *	ç°¡ä»‹ï¼šæ­¤Activityç”¨ä¾†æ§åˆ¶è®€å–ä¸åŒèª²ç¨‹é–“çš„è³‡è¨Š
  * 
  * */
 
@@ -58,10 +58,10 @@ import edu.ccu.cs.HTTPHandler.HtmlGetter;
 /***
  * 
  * Extends: FragmentActivity
- * 	- ¥Ñ©ó­n§Q¥Îviewpager±±¨îfragment
+ * 	- ç”±æ–¼è¦åˆ©ç”¨viewpageræ§åˆ¶fragment
  * Implements:
  * 	OnNavigationListener
- * 		- ºÊÅ¥navigation
+ * 		- ç›£è½navigation
  *
  */
 
@@ -96,9 +96,9 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		load_done = false; // Åª¨ú©|¥¼µ²§ô
+		load_done = false; // è®€å–å°šæœªçµæŸ
 		manager =(DownloadManager)getSystemService(DOWNLOAD_SERVICE); 
-		// ¦pªG¿Ã¹õÂà¦V¤F¡A·|­«·s©I¥soncreate¡A³oÃä¥i¥HÀ°§U§â¸ê®ÆÅª¦^¨Ó
+		// å¦‚æœè¢å¹•è½‰å‘äº†ï¼Œæœƒé‡æ–°å‘¼å«oncreateï¼Œé€™é‚Šå¯ä»¥å¹«åŠ©æŠŠè³‡æ–™è®€å›ä¾†
 		final MyDataObject data = (MyDataObject) getLastCustomNonConfigurationInstance();
 		if (data != null && data.tload_done) {
 			setContentView(R.layout.layout_main);
@@ -131,7 +131,7 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 			actionBar.setSelectedNavigationItem(listViewCount);
 			actionBar.setDisplayShowTitleEnabled(false);
 		}
-		else {	// ¦pªG¨S¦³Âà¦V
+		else {	// å¦‚æœæ²’æœ‰è½‰å‘
 			setContentView(R.layout.layout_loading);
 			checkNetwork();
 			final MyHandler handler = new MyHandler();
@@ -153,7 +153,7 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 	}	
 	/**
 	 * onOptionsItemSelected()
-	 * 		- ¦^¤W¤@¼h©Î¬Oµn¥X
+	 * 		- å›ä¸Šä¸€å±¤æˆ–æ˜¯ç™»å‡º
 	 */
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    switch (item.getItemId()) {
@@ -179,7 +179,7 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 	
 	/**
 	 * onCreateOptinsMenu()
-	 * 		- ±Nµn¥Xoption¸ü¤J
+	 * 		- å°‡ç™»å‡ºoptionè¼‰å…¥
 	 */
 	
 	@Override
@@ -247,11 +247,11 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 		
 		/**
 		 * onNavigationItemSelected()
-		 * 		- ¨Ì·Ó¿ï¨úªº½Òµ{¡A±N°Ñ¼Æ­«·s±a¤J¦¹activity
+		 * 		- ä¾ç…§é¸å–çš„èª²ç¨‹ï¼Œå°‡åƒæ•¸é‡æ–°å¸¶å…¥æ­¤activity
 		 */
 		public boolean onNavigationItemSelected(int arg0, long arg1) {
 			// TODO Auto-generated method stub
-			// ¸Ñ¨M
+			// è§£æ±º
 			if(!readOrNot){
 				readOrNot = true;
 			}
@@ -273,7 +273,7 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 	/**
 	 * 
 	 * @param handler
-	 * @return ¬O§_¸ü¤J¦¨¥\
+	 * @return æ˜¯å¦è¼‰å…¥æˆåŠŸ
 	 */
 	private boolean load(MyHandler handler) {
 		Message m1 = new Message();
@@ -342,7 +342,7 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 
 	/**
 	 * 
-	 * ¥Î¨Ó±±¨îÅª¨ú¤£¦Pfragmentªºadapter
+	 * ç”¨ä¾†æ§åˆ¶è®€å–ä¸åŒfragmentçš„adapter
 	 *
 	 */
 	public class SectionsPagerAdapter extends FragmentPagerAdapter {
@@ -400,7 +400,7 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 			View rootView = inflater.inflate(R.layout.layout_announcement_list, container, false);	
 			switch(getArguments().getInt(ARG_SECTION_NUMBER)){
 			case 1:
-				// ±NlistviewªºlayoutÅª¥X¨Ó
+				// å°‡listviewçš„layoutè®€å‡ºä¾†
 				rootView = inflater.inflate(R.layout.layout_announcement_list, container, false);
 				((ListView)rootView.findViewById(R.id.listViewAnnouncementList)).setAdapter(mAnnounceAdapter);
 				((ListView)rootView.findViewById(R.id.listViewAnnouncementList)).setOnItemClickListener(new listViewListener());
@@ -513,7 +513,7 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 	
 	/**
 	 * 
-	 * ListView­n«È»s¤ÆÅã¥Üªº¤º®e¡A§Q¥Î³]­p¤£¦Pªºadapter
+	 * ListViewè¦å®¢è£½åŒ–é¡¯ç¤ºçš„å…§å®¹ï¼Œåˆ©ç”¨è¨­è¨ˆä¸åŒçš„adapter
 	 *
 	 */
 	private class AnnounceAdapter extends BaseAdapter {
@@ -820,7 +820,7 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
     }
 	
 	/**
-	 * ±ÛÂàªº´Á¶¡·|§â¸ê®Æ¼È®É¦s°_¨Ó
+	 * æ—‹è½‰çš„æœŸé–“æœƒæŠŠè³‡æ–™æš«æ™‚å­˜èµ·ä¾†
 	 */
 	@Override
 	public Object onRetainCustomNonConfigurationInstance() {
@@ -886,7 +886,7 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 	}
 	/**
 	 *  checkNetWork()
-	 *  	- ÀË¬d¬O§_ÁÙ¦³ºô¸ô³s½u
+	 *  	- æª¢æŸ¥æ˜¯å¦é‚„æœ‰ç¶²è·¯é€£ç·š
 	 */
 	private void checkNetwork() {
 		if (!isConnectingToInternet()) {

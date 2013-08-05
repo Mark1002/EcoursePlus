@@ -24,7 +24,7 @@ public class AnnouncementDetailActivity extends Activity{
 		setContentView(R.layout.layout_announcement_detail);
 		
 		final ActionBar actionBar = getActionBar();
-		/* µ¥¹ê§@§¹¾ãªº§â¸ê®Æ¦s°_¨Ó¦A¨Ï¥Î */
+		/* ç­‰å¯¦ä½œå®Œæ•´çš„æŠŠè³‡æ–™å­˜èµ·ä¾†å†ä½¿ç”¨ */
 		// actionBar.setDisplayHomeAsUpEnabled(true);
 		
 		textViewTitle = (TextView)findViewById(R.id.AnnouncementDetailTitle);

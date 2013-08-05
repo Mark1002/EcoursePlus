@@ -33,8 +33,8 @@ public class LoginActivity extends Activity implements Button.OnClickListener, O
 		super.onCreate(savedInstanceState);
 		settings = getPreferences(MODE_PRIVATE);
 		setContentView(R.layout.layout_login);
-		// ªì©l¤Æ
-		intent = new Intent().setClass(this, CourseListActivity.class); // ¥N¤Jactivity
+		// åˆå§‹åŒ–
+		intent = new Intent().setClass(this, CourseListActivity.class); // ä»£å…¥activity
 		editTextAcc = (EditText)findViewById(R.id.editText_acc);
 		editTextPwd = (EditText)findViewById(R.id.editText_pwd);
 		buttonLogin = (Button)findViewById(R.id.button_login);
@@ -65,7 +65,7 @@ public class LoginActivity extends Activity implements Button.OnClickListener, O
 			HtmlGetter mHtmlGetter = new HtmlGetter();
 			String courseHtml = mHtmlGetter.login(acc, pwd);
 			if(courseHtml.equals("Login Failed")){
-				// Äµ§i°T®§
+				// è­¦å‘Šè¨Šæ¯
 				AlertDialog.Builder builder = new AlertDialog.Builder(this);
 				builder.setMessage(R.string.error_msg_1)
 				       .setTitle(R.string.error_title);
@@ -75,7 +75,7 @@ public class LoginActivity extends Activity implements Button.OnClickListener, O
 				dialog.show();						
 			}
 			else{
-				// §Q¥Îbundle°µactivity¶¡ªº·¾³q
+				// åˆ©ç”¨bundleåšactivityé–“çš„æºé€š
 				ProgressDialog mDialog = ProgressDialog.show(this, "Please wait", "Loading");
 				storeSetting(acc, pwd);
 				Bundle bundle =  new Bundle();
