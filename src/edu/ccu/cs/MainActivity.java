@@ -13,6 +13,8 @@ import java.util.Iterator;
 import java.util.Locale;
 import java.util.TreeSet;
 
+import com.actionbarsherlock.app.*;
+
 import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.ActionBar.OnNavigationListener;
@@ -123,6 +125,7 @@ public class MainActivity extends FragmentActivity /*implements OnNavigationList
 			mPagerTitleStrip.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25);
 			mPagerTitleStrip.setTextSpacing(100);
 			mPagerTitleStrip.setTextColor(Color.WHITE);
+			
 /*
 			final ActionBar actionBar = getActionBar();
 			actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
