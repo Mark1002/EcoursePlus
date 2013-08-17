@@ -13,8 +13,6 @@ import java.util.Iterator;
 import java.util.Locale;
 import java.util.TreeSet;
 
-import com.actionbarsherlock.app.*;
-
 import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.ActionBar.OnNavigationListener;
