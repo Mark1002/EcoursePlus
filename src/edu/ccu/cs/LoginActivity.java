@@ -14,27 +14,34 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 
 import edu.ccu.cs.HTTPHandler.*;
 
-public class LoginActivity extends Activity implements Button.OnClickListener, OnCheckedChangeListener{
+/**
+ * The login activity of EcoursePlus
+ * @author Chang Yuan-Yi
+ * @author Wu Chen-Yu
+ *
+ */
+public class LoginActivity extends Activity implements Button.OnClickListener, CompoundButton.OnCheckedChangeListener{
 
-	private Intent intent;
-	private EditText editTextAcc;
+	/** Using intent to create a new activity*/
+	private Intent intent; 
+	private EditText editTextAcc; 
 	private EditText editTextPwd;
 	private Button buttonLogin;
 	private CheckBox checkBoxRePwd;
-	SharedPreferences settings;
+	/** Stores the account and password information. */
+	SharedPreferences settings; 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		settings = getPreferences(MODE_PRIVATE);
 		setContentView(R.layout.layout_login);
-		// 初始化
-		intent = new Intent().setClass(this, CourseListActivity.class); // 代入activity
+		// initialize
+		intent = new Intent().setClass(this, CourseListActivity.class);
 		editTextAcc = (EditText)findViewById(R.id.editText_acc);
 		editTextPwd = (EditText)findViewById(R.id.editText_pwd);
 		buttonLogin = (Button)findViewById(R.id.button_login);
@@ -46,17 +53,23 @@ public class LoginActivity extends Activity implements Button.OnClickListener, O
 		restorePrefs();	
 		
 	}
-
-	/* Button*/
+	/**
+	 * It is called when login button is pressed.
+	 */
 	@Override
 	public void onClick(View v) {
 		if (!isConnectingToInternet()) {
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			builder.setMessage("Failed to access network")
-			       .setTitle("ERROR");
+			builder.setMessage(R.string.error_msg_2)
+			       .setTitle(R.string.error_title);
+			builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub				
+				}
+			});
 			AlertDialog dialog = builder.create();
-			dialog.setButton("OK", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which){}});
 			dialog.show();			
 		}
 		else {
@@ -64,18 +77,22 @@ public class LoginActivity extends Activity implements Button.OnClickListener, O
 			String pwd = editTextPwd.getText().toString();
 			HtmlGetter mHtmlGetter = new HtmlGetter();
 			String courseHtml = mHtmlGetter.login(acc, pwd);
-			if(courseHtml.equals("Login Failed")){
-				// 警告訊息
+			if(courseHtml.equals("Login Failed")){ // the HtmlGetter will return "Login Failed" when wrong acc/pass 
 				AlertDialog.Builder builder = new AlertDialog.Builder(this);
 				builder.setMessage(R.string.error_msg_1)
 				       .setTitle(R.string.error_title);
+				builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub						
+					}
+				});
 				AlertDialog dialog = builder.create();
-				dialog.setButton("OK", new DialogInterface.OnClickListener() {
-	                public void onClick(DialogInterface dialog, int which){}});
 				dialog.show();						
 			}
 			else{
-				// 利用bundle做activity間的溝通
+				// using bundle communicating with other activity
 				ProgressDialog mDialog = ProgressDialog.show(this, "Please wait", "Loading");
 				storeSetting(acc, pwd);
 				Bundle bundle =  new Bundle();
@@ -87,12 +104,11 @@ public class LoginActivity extends Activity implements Button.OnClickListener, O
 			}
 		}
 	}
-	
-	
-	
+	/**
+	 * To determine whether the account and password store or not.
+	 */
 	@Override
 	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-		// TODO Auto-generated method stub
 		switch(buttonView.getId()){
 		case R.id.checkBox_repwd:
 			if(!isChecked){
@@ -105,7 +121,10 @@ public class LoginActivity extends Activity implements Button.OnClickListener, O
 		}
 		
 	}
-
+	/**
+	 * Check the Internet connection.
+	 * @return true if is connected, false otherwise.
+	 */
 	private boolean isConnectingToInternet(){
 	     ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 	     if (connMgr != null)
@@ -115,7 +134,10 @@ public class LoginActivity extends Activity implements Button.OnClickListener, O
 	          return (info.isConnected());
 	     }
 	     return false;
-	  }
+	}
+	/**
+	 * Restore the account and password.
+	 */
 	private void restorePrefs() {
 	    SharedPreferences settings = getPreferences(MODE_PRIVATE);
 	    String rememberMe = settings.getString("REMEMBER_ME", "");
@@ -126,7 +148,14 @@ public class LoginActivity extends Activity implements Button.OnClickListener, O
 	    }
 	    
 	}
+	/**
+	 * It stores the account and password in SharedPrefernce.
+	 * @see #settings
+	 * @param acc account
+	 * @param pwd password
+	 */
 	private void storeSetting(String acc, String pwd) {
+		
 	    SharedPreferences settings = getPreferences(MODE_PRIVATE);
 	    if(checkBoxRePwd.isChecked()) {
 	        settings.edit().putString("REMEMBER_ME", "true").commit();

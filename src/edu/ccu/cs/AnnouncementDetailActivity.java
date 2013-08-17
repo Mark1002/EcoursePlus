@@ -23,7 +23,7 @@ public class AnnouncementDetailActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.layout_announcement_detail);
 		
-		final ActionBar actionBar = getActionBar();
+		//final ActionBar actionBar = getActionBar();
 		/* 等實作完整的把資料存起來再使用 */
 		// actionBar.setDisplayHomeAsUpEnabled(true);
 		

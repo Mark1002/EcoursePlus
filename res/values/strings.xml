@@ -14,5 +14,7 @@
     <string name="total_rating">總排名</string>
     <string name="total_grade">總成績</string>
     <string name="version">1.0.1</string>
+    <string name="ok">確認</string>
+    <string name="cancel">取消</string>
 
 </resources>

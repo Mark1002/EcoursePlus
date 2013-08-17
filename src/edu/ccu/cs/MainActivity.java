@@ -13,6 +13,8 @@ import java.util.Iterator;
 import java.util.Locale;
 import java.util.TreeSet;
 
+import com.actionbarsherlock.app.*;
+
 import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.ActionBar.OnNavigationListener;
@@ -65,7 +67,7 @@ import edu.ccu.cs.HTTPHandler.HtmlGetter;
  *
  */
 
-public class MainActivity extends FragmentActivity implements OnNavigationListener 
+public class MainActivity extends FragmentActivity /*implements OnNavigationListener*/ 
 {
 
 	SectionsPagerAdapter mSectionsPagerAdapter;
@@ -123,13 +125,14 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 			mPagerTitleStrip.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25);
 			mPagerTitleStrip.setTextSpacing(100);
 			mPagerTitleStrip.setTextColor(Color.WHITE);
-
+			
+/*
 			final ActionBar actionBar = getActionBar();
 			actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 			actionBar.setDisplayHomeAsUpEnabled(true);
 			actionBar.setListNavigationCallbacks(mArrayAdapter, this);
 			actionBar.setSelectedNavigationItem(listViewCount);
-			actionBar.setDisplayShowTitleEnabled(false);
+			actionBar.setDisplayShowTitleEnabled(false);*/
 		}
 		else {	// 如果沒有轉向
 			setContentView(R.layout.layout_loading);
@@ -191,7 +194,7 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 
 
 
-	class MyHandler extends Handler implements  ActionBar.OnNavigationListener{ 
+	class MyHandler extends Handler /*implements  ActionBar.OnNavigationListener*/{ 
 		@Override 
 		public void handleMessage(Message msg) { 
 			switch (msg.what) {
@@ -219,12 +222,12 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 					mPagerTitleStrip.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25);
 					mPagerTitleStrip.setTextSpacing(100);
 					mPagerTitleStrip.setTextColor(Color.WHITE);
-					
+					/*
 					final ActionBar actionBar = getActionBar();
 					actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 					
 					actionBar.setDisplayHomeAsUpEnabled(true);
-					
+					*/
 					ArrayList<String> mCourseListName = new ArrayList<String>();
 					Iterator<HashMap<String, String>> tempiterator = mCourseList.iterator();
 					while(tempiterator.hasNext()){
@@ -235,10 +238,10 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 
 					mSpinner = new Spinner(getApplicationContext());
 					mSpinner.setAdapter(mArrayAdapter);
-					
+					/*
 					actionBar.setListNavigationCallbacks(mArrayAdapter, this);
 					actionBar.setSelectedNavigationItem(listViewCount);
-					actionBar.setDisplayShowTitleEnabled(false);
+					actionBar.setDisplayShowTitleEnabled(false);*/
 					
 					break;
 			} 
@@ -249,6 +252,7 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 		 * onNavigationItemSelected()
 		 * 		- 依照選取的課程，將參數重新帶入此activity
 		 */
+		/*
 		public boolean onNavigationItemSelected(int arg0, long arg1) {
 			// TODO Auto-generated method stub
 			// 解決
@@ -266,7 +270,7 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 				startActivity(intent);
 			}
 			return false;
-		}
+		}*/
 		 
 
 	}
@@ -487,7 +491,7 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 							Uri uri=Uri.parse(url);
 							Request request=new Request(uri);
 							request.setDestinationInExternalPublicDir("/download/", ((HashMap<String, String>)arg0.getItemAtPosition(arg2)).get("title").toString());
-							request.setNotificationVisibility(request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+							//request.setNotificationVisibility(request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 							((DownloadManager) manager).enqueue(request);  
 						}
 					};
@@ -866,7 +870,7 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 		private int tlistViewCount;
 		private boolean tload_done;
 	}
-	@Override
+	/*@Override
 	public boolean onNavigationItemSelected(int arg0, long arg1) {
 		// TODO Auto-generated method stub
 		if(!readOrNot){
@@ -883,7 +887,7 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 			startActivity(intent);
 		}
 		return false;
-	}
+	}*/
 	/**
 	 *  checkNetWork()
 	 *  	- 檢查是否還有網路連線
