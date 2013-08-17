@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="error_title">警告</string>
+    <string name="error_title">錯誤</string>
     <string name="error_msg_1">錯誤的帳號密碼 (ERROR01)</string>
+    <string name="error_msg_2">連線失敗</string>
 </resources>

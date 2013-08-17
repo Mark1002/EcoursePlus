@@ -18,20 +18,22 @@ import android.widget.EditText;
 
 import edu.ccu.cs.HTTPHandler.*;
 
+/**
+ * The login activity of EcoursePlus
+ * @author Chang Yuan-Yi
+ * @author Wu Chen-Yu
+ *
+ */
 public class LoginActivity extends Activity implements Button.OnClickListener, CompoundButton.OnCheckedChangeListener{
-	/**
-	 * LoginActivity is the main of this program.
-	 * @author Chang Yuan-yi, Wu Chen-Yu
-	 * @version 1.0.1
-	 * 
-	 */
 
-	private Intent intent;
-	private EditText editTextAcc;
+	/** Using intent to create a new activity*/
+	private Intent intent; 
+	private EditText editTextAcc; 
 	private EditText editTextPwd;
 	private Button buttonLogin;
 	private CheckBox checkBoxRePwd;
-	SharedPreferences settings;
+	/** Stores the account and password information. */
+	SharedPreferences settings; 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -51,14 +53,17 @@ public class LoginActivity extends Activity implements Button.OnClickListener, C
 		restorePrefs();	
 		
 	}
+	/**
+	 * It is called when login button is pressed.
+	 */
 	@Override
 	public void onClick(View v) {
 		if (!isConnectingToInternet()) {
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			builder.setMessage("Failed to access network")
-			       .setTitle("ERROR");
+			builder.setMessage(R.string.error_msg_2)
+			       .setTitle(R.string.error_title);
 			builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-				
+
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					// TODO Auto-generated method stub				
@@ -72,9 +77,9 @@ public class LoginActivity extends Activity implements Button.OnClickListener, C
 			String pwd = editTextPwd.getText().toString();
 			HtmlGetter mHtmlGetter = new HtmlGetter();
 			String courseHtml = mHtmlGetter.login(acc, pwd);
-			if(courseHtml.equals("Login Failed")){
+			if(courseHtml.equals("Login Failed")){ // the HtmlGetter will return "Login Failed" when wrong acc/pass 
 				AlertDialog.Builder builder = new AlertDialog.Builder(this);
-				builder.setMessage(R.string.error_msg_1) // error msg 001
+				builder.setMessage(R.string.error_msg_1)
 				       .setTitle(R.string.error_title);
 				builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
 					
@@ -99,10 +104,11 @@ public class LoginActivity extends Activity implements Button.OnClickListener, C
 			}
 		}
 	}
-	
+	/**
+	 * To determine whether the account and password store or not.
+	 */
 	@Override
 	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-		// TODO Auto-generated method stub
 		switch(buttonView.getId()){
 		case R.id.checkBox_repwd:
 			if(!isChecked){
@@ -115,11 +121,11 @@ public class LoginActivity extends Activity implements Button.OnClickListener, C
 		}
 		
 	}
-
+	/**
+	 * Check the Internet connection.
+	 * @return true if is connected, false otherwise.
+	 */
 	private boolean isConnectingToInternet(){
-		/**
-		 * @return true for connected, false for disconnected
-		 */
 	     ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 	     if (connMgr != null)
 	     {
@@ -128,7 +134,10 @@ public class LoginActivity extends Activity implements Button.OnClickListener, C
 	          return (info.isConnected());
 	     }
 	     return false;
-	  }
+	}
+	/**
+	 * Restore the account and password.
+	 */
 	private void restorePrefs() {
 	    SharedPreferences settings = getPreferences(MODE_PRIVATE);
 	    String rememberMe = settings.getString("REMEMBER_ME", "");
@@ -139,7 +148,14 @@ public class LoginActivity extends Activity implements Button.OnClickListener, C
 	    }
 	    
 	}
+	/**
+	 * It stores the account and password in SharedPrefernce.
+	 * @see #settings
+	 * @param acc account
+	 * @param pwd password
+	 */
 	private void storeSetting(String acc, String pwd) {
+		
 	    SharedPreferences settings = getPreferences(MODE_PRIVATE);
 	    if(checkBoxRePwd.isChecked()) {
 	        settings.edit().putString("REMEMBER_ME", "true").commit();
